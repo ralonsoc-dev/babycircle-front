@@ -1,0 +1,38 @@
+
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">Form Login User</h5>
+    </div>
+    <div class="modal-body">
+        <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
+            <div>
+                <input placeholder="Username" name="username" [(ngModel)]="user.username" class="form-control my-2" required #username="ngModel"/>
+                @if (username.invalid && (username.dirty || username.touched)) {
+                    @if (username.errors!['required']) {
+                        <div class="text-danger">
+                            El usuario es requerido
+                        </div>
+                    }
+                    <p>p1</p>>
+                }
+            </div>
+            <div>
+                <input placeholder="Password" name="password" type="password" [(ngModel)]="user.password" class="form-control my-2" required #password="ngModel"/>
+                @if (password.invalid && (password.dirty || password.touched)) {
+                    @if (password.errors!['required']) {
+                        <div class="text-danger">
+                            La contraseña es requerido
+                        </div>
+                    }
+                    <p>p2</p>>
+                }
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer d-flex">
+        <button type="submit" class="btn btn-primary my-2 me-2" [disabled]="userForm.invalid">Login</button>
+        <button type="button" class="btn btn-secondary my-2 ml-2" (click)="onClear(userForm)">Clear</button>
+    </div>
+</div>
+
