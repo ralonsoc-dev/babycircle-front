@@ -3,13 +3,12 @@ import { User } from '../../models/user';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [
-    FormsModule
-  ],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+    selector: 'app-register',
+    imports: [
+        FormsModule
+    ],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
 
